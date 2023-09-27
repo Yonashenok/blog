@@ -4,7 +4,6 @@ class Post < ApplicationRecord
   has_many :comments, class_name: 'Comment'
   has_many :likes, class_name: 'Like'
 
-
   # methods
   def update_post_count
     user.update(post_counter: user.posts.count)

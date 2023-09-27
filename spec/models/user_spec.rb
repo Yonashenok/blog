@@ -4,7 +4,6 @@ RSpec.describe User, type: :model do
   let(:user) { User.new(name: 'someone', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico', post_counter: 4) }
   before { user.save }
 
-
   context 'when testing User class' do
     it 'must have user name' do
       user.name = nil

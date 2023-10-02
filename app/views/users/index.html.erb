@@ -1,9 +1,9 @@
-<div class="container">
+<div class="container d-flex flex-column  justify-content-center align-items-center pt-5">
 <h1>Users</h1>
 <ul class="list-group">
 <% @users.each do |user| %>
-  <li class="list-group-item d-flex justify-content-start gap-4 align-items-start">
-  <span><img src="https://picsum.photos/id/64/200" class="card-img-top" alt="..."></span>
+  <li class="list-group-item d-flex justify-content-start gap-4 align-items-start item">
+  <span><img src="https://picsum.photos/id/64/200" class="card-img-top imgs" alt="..."></span>
   <span class="d-flex justify-content-start gap-4 align-items-start">
    name: <%= user.name %>
   <span class="badge bg-primary rounded-pill"> number of posts: <%= user.posts.count %> </span>

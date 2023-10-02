@@ -18,7 +18,7 @@
     </div>
   </li>
   <ul class="list-group-item item mt-2 ">
-   <% post.comments.each do |comment| %>
+   <% post.recent_comments.each do |comment| %>
  <li class="list-group-item">username:  <%= User.find(comment.user_id).name %> comment:  <%= comment.text%> </li> 
   <%end%>
   </ul>

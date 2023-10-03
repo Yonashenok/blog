@@ -11,12 +11,12 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
-  def create 
+  def create
     @post = current_user.posts.build(params.require(:post).permit(:title, :text))
-    if  @post.save
-      flash[:notice] = "Post was created seccesufuly"
+    if @post.save
+      flash[:notice] = 'Post was created seccesufuly'
       redirect_to user_path(id: current_user)
-    else 
+    else
       render :new
     end
   end

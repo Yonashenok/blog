@@ -18,5 +18,7 @@
 
   <div class='d-flex justify-content-center align-items-center'>
   <%= render 'likes/new', post: @post, like: @like %>
+  <%= link_to "Go to Posts Page", user_posts_path, class: "btn btn-success ms-3" %>
+
   </div>
 </div>

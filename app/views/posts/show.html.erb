@@ -15,7 +15,10 @@
  <li class="list-group-item">username:  <%= User.find(comment.user_id).name %> comment:  <%= comment.text%> </li> 
   <%end%>
   </ul>
-  <div class='d-flex justify-content-center align-items-center pt-5'>
-<button type="button" class="btn btn-primary">Pagnation</button>
+
+  <div class='d-flex justify-content-center align-items-center'>
+  <%= render 'likes/new', post: @post, like: @like %>
+  <%= link_to "Go to Posts Page", user_posts_path, class: "btn btn-success ms-3" %>
+
   </div>
 </div>

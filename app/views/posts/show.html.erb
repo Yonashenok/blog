@@ -12,8 +12,8 @@
     </div>
   </li>
   <ul class="list-group-item item mt-2 ">
-   <% @post.comments.each do |comment| %>
- <li class="list-group-item">username:  <%= User.find(comment.user_id).name %> comment:  <%= comment.text%> </li> 
+   <% @post.comments.includes(:user).each do |comment| %>
+ <li class="list-group-item">username:  <%= comment.user.name %> comment:  <%= comment.text%> </li> 
   <%end%>
   </ul>
 

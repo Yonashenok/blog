@@ -2,6 +2,7 @@
 <h1>Users</h1>
 <ul class="list-group">
 <% @users.each do |user| %>
+<a href="<%= user_path(user.id)%>" class="text-decoration-none">
   <li class="list-group-item d-flex justify-content-start gap-4 align-items-start item">
   <span><img src="https://picsum.photos/id/64/200" class="card-img-top imgs" alt="..."></span>
   <span class="d-flex justify-content-start gap-4 align-items-start">
@@ -9,6 +10,7 @@
   <span class="badge bg-primary rounded-pill"> number of posts: <%= user.posts.count %> </span>
   </span>
   </li>
+</a>
 <% end %>
 </ul>
 </div>

@@ -3,9 +3,9 @@ require 'rails_helper'
 RSpec.describe 'users/show.html.erb', type: :feature do
   describe 'show page' do
     let(:user1) { User.create(name: 'someone1', photo: 'https://picsum.photos/id/64/200', bio: 'Teacher from Mexico') }
-    let!(:post1) {  Post.create(user: user1, title: 'first ever post 1', text: 'this my post for the first time') }
-    let!(:post2) {  Post.create(user: user1, title: 'first ever post 2', text: 'this my post for the first time') }
-    let!(:post3) {  Post.create(user: user1, title: 'first ever post 3', text: 'this my post for the first time') }
+    let!(:post1) { Post.create(user: user1, title: 'first ever post 1', text: 'this my post for the first time') }
+    let!(:post2) { Post.create(user: user1, title: 'first ever post 2', text: 'this my post for the first time') }
+    let!(:post3) { Post.create(user: user1, title: 'first ever post 3', text: 'this my post for the first time') }
     before do
       visit user_path(user1)
     end

@@ -122,6 +122,12 @@ To run test coverages, run the following command:
 - Twitter: [@YonasHenok3](https://www.twitter.com/YonasHenok3)
 - LinkedIn: [Yonas Henok](https://www.linkedin.com/in/yonas-henok/)
 
+👤 **Fickry Bil Iman**
+
+- GitHub: [@fickryiman](https://github.com/fickryiman)
+- Facebook: [@fickry.bil.iman](https://www.facebook.com/fickry.bil.iman)
+- LinkedIn: [fickry-bil-iman](https://www.linkedin.com/in/fickry-bil-iman)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>

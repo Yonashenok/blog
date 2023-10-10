@@ -16,6 +16,11 @@
 
 @import 'bootstrap';
 
+.current {
+  background-color: blue;
+  color: #fff;
+}
+
 .item {
   width: 490px;
 }

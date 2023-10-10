@@ -5,7 +5,7 @@ RSpec.describe 'posts/index.html.erb', type: :feature do
     let(:user) do
       User.create(name: 'Someone', photo: 'https://picsum.photos/id/64/200', bio: 'Teacher from Mexico')
     end
-    let!(:post) { Post.create(user:, title: 'first ever post', text: 'this my post for the first time') }
+    let!(:post) { Post.create(user: user, title: 'first ever post', text: 'this my post for the first time') }
     let!(:comment1) { Comment.create(user:, post:, text: 'comment 1') }
     let!(:comment2) { Comment.create(user:, post:, text: 'comment 2') }
     let!(:like1) { Like.create(user:, post:) }

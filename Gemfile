@@ -30,8 +30,7 @@ gem 'jbuilder'
 
 gem 'bootstrap', '~> 5.1.3'
 
-gem 'bootstrap_form', '~> 5.3'
-
+gem 'kaminari'
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 

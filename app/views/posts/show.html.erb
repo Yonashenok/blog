@@ -9,17 +9,21 @@
     <div class=" d-flex justify-content-between gap-2 align-items-start">
     <span class="badge bg-primary rounded-pill">Comments: <%= @post.comments.count%></span>
     <span class="badge bg-primary rounded-pill">Likes: <%= @post.likes.count %></span>
+ <%= link_to "Delete",  user_post_path(@post.author_id, @post.id),  data: { "turbo-method": :delete, confirm: "Are you sure ?" }, class: "btn btn-outline-danger ms-3 py-0  fw-semibold fs-5 px-1" %>
+
     </div>
   </li>
   <ul class="list-group-item item mt-2 ">
    <% @post.comments.includes(:user).each do |comment| %>
- <li class="list-group-item">username:  <%= comment.user.name %> comment:  <%= comment.text%> </li> 
+ <li class="list-group-item">username:  <%= comment.user.name %> comment:  <%= comment.text%> 
+ <%= link_to "Delete",  user_post_comment_path(comment.user.id, @post.id, comment.id),  data: { "turbo-method": :delete, confirm: "Are you sure ?" }, class: "btn btn-outline-danger ms-3 py-0  fw-semibold fs-5 px-1" %>
+ </li> 
   <%end%>
   </ul>
 
   <div class='d-flex justify-content-center align-items-center'>
   <%= render 'likes/new', post: @post, like: @like %>
-  <%= link_to "Go to Posts Page", user_posts_path, class: "btn btn-success ms-3" %>
+  <%= link_to "Go to Posts Page", user_posts_path(@post.author_id), class: "btn btn-success ms-3" %>
 
   </div>
 </div>

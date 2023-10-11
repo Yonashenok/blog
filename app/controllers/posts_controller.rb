@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
+  
   def index
     @user = User.find(params[:user_id])
     @posts = @user.posts.page(params[:page]).per(3)
@@ -21,4 +23,12 @@ class PostsController < ApplicationController
       render :new
     end
   end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    flash[:notice] = "Post was Deleted seccesufuly"
+    redirect_to user_posts_path
+  end
+
 end

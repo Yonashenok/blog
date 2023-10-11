@@ -9,9 +9,9 @@ Rails.application.routes.draw do
   # get "/users/:user_id/posts/:id", to: "posts#show"
   root "users#index"
   resources :users, only: [:index, :show] do
-    resources :posts, only: [:index, :show, :new, :create] do
+    resources :posts, only: [:index, :show, :new, :create, :destroy] do
       resources :likes, only: [:create]
-      resources :comments, only: [:new, :create]
+      resources :comments, only: [:new, :create, :destroy]
     end
   end
 end

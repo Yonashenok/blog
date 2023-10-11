@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  load_and_authorize_resource
+  
   def new
     @comment = Comment.new
   end
@@ -11,6 +13,13 @@ class CommentsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+    flash[:notice] = "Comment was Deleted seccesufuly"
+    redirect_to user_posts_path
   end
 
   def comments_params

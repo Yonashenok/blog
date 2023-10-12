@@ -7,7 +7,14 @@ class Api::V1::CommentsController < ApplicationController
     render json: {success: true , data: @comments }, include: %w[user ]
   end
 
-
+  def create
+    @comment = current_user.comments.build(comments_params)
+    if @comment.save
+    render json: {success: true , data: @comment}, status: :created
+    else
+    render json: {error: @comment.errors.full_messages }, status: :unprocessable_entity
+    end
+  end
 
   private
 

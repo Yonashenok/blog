@@ -14,9 +14,9 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:id])
-    @post.destroy
-    flash[:notice] = 'Post was Deleted seccesufuly'
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+    flash[:notice] = 'Comment was Deleted seccesufuly'
     redirect_to user_posts_path
   end
 

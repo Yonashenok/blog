@@ -31,6 +31,7 @@ gem 'jbuilder'
 gem 'bootstrap', '~> 5.1.3'
 
 gem 'kaminari'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
@@ -76,3 +77,5 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
+
+gem 'devise', '~> 4.9'

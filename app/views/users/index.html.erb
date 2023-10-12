@@ -1,4 +1,11 @@
 <div class="container d-flex flex-column  justify-content-center align-items-center pt-5">
+<div class="item  d-flex  justify-content-end align-items-center  ">
+<%= button_to(
+  "Log Out",
+        destroy_user_session_path,
+        method: :delete
+      ) %>
+</div>
 <h1>Users</h1>
 <ul class="list-group">
 <% @users.each do |user| %>

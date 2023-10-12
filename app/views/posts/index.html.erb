@@ -14,7 +14,7 @@
   </span>
   </li>
   <% @posts.includes(:likes, :comments).each do |post| %>
-  <a href="<%= url_for(controller: 'posts', action: 'show', user_id: @user.id, id: post.id) %>" class="text-decoration-none">
+  <a href="<%= user_post_path(@user, post) %>" class="text-decoration-none">
     <li class="list-group-item d-flex justify-content-between align-items-start mt-5 item">
     <div class="ms-2 me-auto">
       <div class="fw-bold">Post # <%= post.id%></div>
@@ -29,12 +29,11 @@
   </a>
   <ul class="list-group-item item mt-2 ">
    <% post.recent_comments.includes(:user).each do |comment| %>
- <li class="list-group-item d-flex justify-content-start gap-4 align-items-start">username:  <%= comment.user.name %> comment:  <%= comment.text%></li> 
+ <li class="list-group-item">username:  <%= comment.user.name %> comment:  <%= comment.text%> </li> 
   <%end%>
   </ul>
   <%end%>
   <div class='d-flex justify-content-center align-items-center pt-5'>
-   <%= link_to 'Back to users', '/users', class: 'btn btn-success ms-3 mb-4' %>
   <%= link_to "Create new Post", new_user_post_path, class: "btn btn-success ms-3 mb-4" %>
   </div>
   <div class="pagination mb-4">

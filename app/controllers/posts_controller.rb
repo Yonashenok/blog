@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-  
   def index
     @user = User.find(params[:user_id])
     @posts = @user.posts.page(params[:page]).per(3)
@@ -22,5 +21,4 @@ class PostsController < ApplicationController
       render :new
     end
   end
-
 end

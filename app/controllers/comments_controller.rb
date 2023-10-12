@@ -1,5 +1,4 @@
 class CommentsController < ApplicationController
-  
   def new
     @comment = Comment.new
   end
@@ -13,8 +12,6 @@ class CommentsController < ApplicationController
       render :new
     end
   end
-
-
 
   def comments_params
     params.require(:comment).permit(:text).merge(post_id: params[:post_id])

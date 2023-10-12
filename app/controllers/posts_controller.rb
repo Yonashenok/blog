@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-  
   def index
     @user = User.find(params[:user_id])
     @posts = @user.posts.page(params[:page]).per(3)
@@ -26,8 +25,7 @@ class PostsController < ApplicationController
   def destroy
     @comment = Comment.find(params[:id])
     @comment.destroy
-    flash[:notice] = "Comment was Deleted seccesufuly"
+    flash[:notice] = 'Comment was Deleted seccesufuly'
     redirect_to user_posts_path
   end
-
 end

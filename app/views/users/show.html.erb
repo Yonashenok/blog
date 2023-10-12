@@ -5,6 +5,7 @@
   <span class="d-flex justify-content-start gap-4 align-items-start">
    name: <%= @user.name %>
   <span class="badge bg-primary rounded-pill"> number of posts: <%= @user.posts.count %> </span>
+  <span class="badge bg-primary rounded-pill"> UserId: <%= @user.id %> </span>
   </span>
   </li>
   <li class="list-group-item mt-5 item"">
@@ -22,6 +23,9 @@
     <div class=" d-flex justify-content-between gap-2 align-items-start">
     <span class="badge bg-primary rounded-pill">Comments: <%= post.comments.count%></span>
     <span class="badge bg-primary rounded-pill">Likes:<%= post.likes.count %></span>
+    <% if can? :destroy, post%>
+      <%= link_to "Delete",  user_post_path(@user.id, post.id),  data: { "turbo-method": :delete, confirm: "Are you sure ?" }, class: "btn btn-outline-danger ms-3 py-0  fw-semibold fs-5 px-1" %>
+    <%end%>
     </div>
   </li>
   </a>

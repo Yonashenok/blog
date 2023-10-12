@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-  load_and_authorize_resource
   
   def index
     @user = User.find(params[:user_id])
@@ -22,13 +21,6 @@ class PostsController < ApplicationController
     else
       render :new
     end
-  end
-
-  def destroy
-    @post = Post.find(params[:id])
-    @post.destroy
-    flash[:notice] = "Post was Deleted seccesufuly"
-    redirect_to user_posts_path
   end
 
 end

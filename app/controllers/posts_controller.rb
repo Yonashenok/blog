@@ -21,11 +21,4 @@ class PostsController < ApplicationController
       render :new
     end
   end
-
-  def destroy
-    @post = Post.find(params[:id])
-    @post.destroy
-    flash[:notice] = 'Post was Deleted seccesufuly'
-    redirect_to user_posts_path
-  end
 end

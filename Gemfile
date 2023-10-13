@@ -58,6 +58,7 @@ group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'rails-controller-testing'
   gem 'rspec-rails'
+   gem 'rswag-specs'
 end
 
 group :development do
@@ -83,3 +84,7 @@ gem 'devise', '~> 4.9'
 gem 'cancancan'
 
 gem 'active_model_serializers', '~> 0.10.14'
+
+gem 'rswag-api'
+gem 'rswag-ui'
+gem 'rswag'

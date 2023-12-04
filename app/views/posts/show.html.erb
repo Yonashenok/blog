@@ -1,0 +1,25 @@
+<div class="container d-flex flex-column  justify-content-center align-items-center pt-5">
+<h1>This Post details for a User</h1>
+    <li class="list-group-item d-flex justify-content-between align-items-start mt-5 item">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold">Post # <%= @post.id%> by <%= User.find(@post.author_id).name %></div>
+      <p>Title: <%= @post.title %></p>
+      <p>Body: <%= @post.text  %></p>
+    </div>
+    <div class=" d-flex justify-content-between gap-2 align-items-start">
+    <span class="badge bg-primary rounded-pill">Comments: <%= @post.comments.count%></span>
+    <span class="badge bg-primary rounded-pill">Likes: <%= @post.likes.count %></span>
+    </div>
+  </li>
+  <ul class="list-group-item item mt-2 ">
+   <% @post.comments.includes(:user).each do |comment| %>
+ <li class="list-group-item">username:  <%= comment.user.name %> comment:  <%= comment.text%> </li> 
+  <%end%>
+  </ul>
+
+  <div class='d-flex justify-content-center align-items-center'>
+  <%= render 'likes/new', post: @post, like: @like %>
+  <%= link_to "Go to Posts Page", user_posts_path, class: "btn btn-success ms-3" %>
+
+  </div>
+</div>

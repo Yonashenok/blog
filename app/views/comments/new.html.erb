@@ -1,0 +1,12 @@
+<div class="container mt-5">
+<%= form_with(model:[@comment], local: true, url: user_post_comments_path) do |f| %>
+   <div class="mb-3">
+    <%= f.label :text, class: "text-dark fs-3 fw-bold  form-label", for: "exampleFormControlTextarea1" %><br/>
+    <%= f.text_area  :text, class: "px-2 w-100 form-control",   id: "exampleFormControlTextarea1", rows:"3"%>
+  </div>
+  <p>
+    <%= f.submit class: "btn btn-success  px-4" %>
+  </p>
+<% end %>
+  <%= link_to "Go to Posts Page", user_posts_path, class: "btn btn-success ms-3" %>
+</div>

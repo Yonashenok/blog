@@ -13,3 +13,19 @@
  *= require_tree .
  *= require_self
  */
+
+@import 'bootstrap';
+
+.current {
+  background-color: blue;
+  color: #fff;
+}
+
+.item {
+  width: 490px;
+}
+
+.imgs {
+  width: 100px;
+  height: 90px;
+}

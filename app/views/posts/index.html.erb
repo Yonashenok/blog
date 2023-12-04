@@ -1,0 +1,42 @@
+<div class="container d-flex flex-column  justify-content-center align-items-center pt-5">
+<div class="item  d-flex  justify-content-end align-items-center  ">
+<%= button_to(
+  "Log Out",
+        destroy_user_session_path,
+        method: :delete
+      ) %>
+</div>
+ <li class="list-group-item d-flex justify-content-start gap-4 align-items-star mt-5 item">
+  <span><img src="https://picsum.photos/id/64/200" class="card-img-top imgs" alt="..."></span>
+  <span class="d-flex justify-content-start gap-4 align-items-start">
+   name: <%= @user.name %>
+  <span class="badge bg-primary rounded-pill"> number of posts: <%= @user.posts.count %> </span>
+  </span>
+  </li>
+  <% @posts.includes(:likes, :comments).each do |post| %>
+  <a href="<%= user_post_path(@user, post) %>" class="text-decoration-none">
+    <li class="list-group-item d-flex justify-content-between align-items-start mt-5 item">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold">Post # <%= post.id%></div>
+     <p>Title: <%= post.title %></p>
+      <p>Body: <%= post.text  %></p>
+    </div>
+    <div class=" d-flex justify-content-between gap-2 align-items-start">
+    <span class="badge bg-primary rounded-pill">Comments: <%= post.comments.count%></span>
+    <span class="badge bg-primary rounded-pill">Likes: <%= post.likes.count %></span>
+    </div>
+  </li>
+  </a>
+  <ul class="list-group-item item mt-2 ">
+   <% post.recent_comments.includes(:user).each do |comment| %>
+ <li class="list-group-item">username:  <%= comment.user.name %> comment:  <%= comment.text%> </li> 
+  <%end%>
+  </ul>
+  <%end%>
+  <div class='d-flex justify-content-center align-items-center pt-5'>
+  <%= link_to "Create new Post", new_user_post_path, class: "btn btn-success ms-3 mb-4" %>
+  </div>
+  <div class="pagination mb-4">
+    <%= paginate @posts %>
+  </div>
+</div>
